@@ -13,6 +13,13 @@ End Code
 
 <!---CONTENT--->
 
+
+
+
+
+
+
+
 <div class="content">
 
     <!---FIRST ROW CARDS--->
@@ -82,4 +89,28 @@ End Code
             <canvas id="lineChart"></canvas>
         </div>
     </div>
+</div>
+<div row>
+<div class="col-md-12">
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+        </tr>
+
+
+        @For Each customer In Model
+            @<tr>
+                <td>@customer.UserID</td>
+                <td>@customer.UserName</td>
+            </tr>
+        Next
+
+
+
+
+
+    </table>
+
+</div>
 </div>

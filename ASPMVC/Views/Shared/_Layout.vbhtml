@@ -6,9 +6,11 @@
     <title>@ViewBag.Title - DASHBOARD</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/Site.css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 
 </head>
-
+    
 <body>
 
     @RenderBody()
@@ -21,6 +23,13 @@
     <footer>
     </footer>
 
+    @RenderSection("scripts", required:=False)
+
+        
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/javascript")
     @RenderSection("scripts", required:=False)
 </body>
 </html>

@@ -13,7 +13,7 @@ Public Class HomeController
         Dim constr As String = ConfigurationManager.ConnectionStrings("mysqlDB").ConnectionString
 
         Using con As MySqlConnection = New MySqlConnection(constr)
-            Dim query As String = "SELECT name, email FROM users "
+            Dim query As String = "SELECT user_id,user_name FROM tbl_dashboard "
 
             Using cmd As MySqlCommand = New MySqlCommand(query)
                 cmd.Connection = con
@@ -23,8 +23,8 @@ Public Class HomeController
 
                     While sdr.Read()
                         customers.Add(New clsCustomerModel With {
-                    .UserID = sdr(Replace("name", "'", "\'")).ToString(),
-                    .UserName = sdr(Replace("email", "'", "\'")).ToString()
+                    .UserID = sdr(Replace("user_id", "'", "\'")).ToString(),
+                    .UserName = sdr(Replace("user_name", "'", "\'")).ToString()
                 })
                     End While
                 End Using
